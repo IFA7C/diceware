@@ -18,7 +18,7 @@ class PairReader {
         InputStream inputStream = this.getClass().getResourceAsStream(FILE_NAME);
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, ENCODING));
 
-        ArrayList<ArrayList<String>> listOfPairs = new ArrayList<>();
+        List<ArrayList<String>> listOfPairs = new ArrayList<>();
         String zeile;
 
         while ((zeile = reader.readLine()) != null) {
