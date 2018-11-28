@@ -22,9 +22,10 @@ public class PasswordProvider {
             diceCup.shake();
             String rollResult = diceCup.getRollResult();
 
-            for (ArrayList<String> pair : listOfPairs)
-                if (pair.get(0).equals(rollResult))
-                    password.append(pair.get(1));
+            listOfPairs
+                    .stream()
+                    .filter(pair -> pair.get(0).equals(rollResult))
+                    .forEach(pair -> password.append(pair.get(1)));
 
             if (i < teilanzahl - 1) {
                 Random random = new Random();
